@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <script src="../js/login.js"></script>
+    <link rel="stylesheet" href="../style/index_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+
+<body>
+    <!-- <div style="background-image: url('../img/public-bus-coloring-page.png');"></div> -->
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-search">
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <div class="content">
+                <div class="logo"><a href="#">Spesa per il borgo</a></div>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a onClick="changePage('../html/prenotazioni.php')">Prenotazioni</a></li>
+                    <li>
+                        <a href="#" class="desktop-link">Servizi Admin</a>
+                        <input type="checkbox" id="show-services">
+                        <label for="show-services" id="menu-admin">Servizi Admin</label>
+
+                        <ul>
+                            <!-- <li><a onClick="changePage('../html/gestione_linee.php')">Gestione fermate e linee</a></li> -->
+                            <li><a href="#">Gestione 1</a></li>
+                            <li><a href="#">Gestione 2</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="content">
+                <label onClick="LogToSignUp('div-reg','div-login');" for="show-login" id="login-icon"
+                    class="login-icon">
+                    <i class="fas fa-sign-in-alt"></i></label>
+                <ul class="links" id="logoutList">
+                    <li>
+                        <a href="#" id="benvenuto" class="desktop-link"> Benvenuto </a>
+                        <input type="checkbox" id="show-logout">
+                        <label for="show-logout" id="menu-logout">Benvenuto</label>
+                        <ul>
+                            <li> <a href="#" onclick="logout()">Logout</a> </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="oscurazione">
+        <div id="div-reg" class="registrazione-wrapper">
+            <section class="form registrazione">
+                <header> Registrati <i onClick="closeLogin()" class="fas fa-times"></i> </header>
+                <form name="reg" action="#" method="post">
+                    <div class="error-txt"> Messaggio di errore </div>
+                    <div class="name-details">
+                        <div class="field input">
+                            <label> Nome </label>
+                            <input autocomplete="off" type="text" name="nome" placeholder="Nome" required>
+                        </div>
+                        <div class="field input">
+                            <label> Cognome </label>
+                            <input autocomplete="off" type="text" name="cognome" placeholder="Cognome" required>
+                        </div>
+                    </div>
+                    <div class="field input">
+                        <label> Username </label>
+                        <input autocomplete="off" type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="field input">
+                        <label> Email </label>
+                        <input autocomplete="off" type="text" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="field input">
+                        <label> Password </label>
+                        <input autocomplete="off" type="password" id="password_field_reg" class="password_field"
+                            name="password" placeholder="Password" required>
+                        <i id="icon-reg-password" class="fas fa-eye-slash"></i>
+                    </div>
+                    <div class="field input">
+                        <label> Conferma Password </label>
+                        <input autocomplete="off" type="password" id="password_field_conf" class="password_field"
+                            name="conf_password" placeholder="Conferma Password" required>
+                        <i id="occhio-conf-password" class="fas fa-eye-slash"></i>
+                    </div>
+                    <div class="field button">
+                        <input type="submit" name="submit-reg" value="Registrati">
+                    </div>
+
+                </form>
+                <div class="link">Già iscritto? <a href="#" onClick="LogToSignUp('div-reg','div-login');"> Accedi </a>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div id="div-login" class="registrazione-wrapper">
+            <section class="form login">
+                <header> Accedi <i onClick="closeLogin()" class="fas fa-times"></i> </header>
+
+                <form name="login" action="#" method="post">
+                    <div class="error-txt"> Messaggio di errore </div>
+
+                    <div class="field input">
+                        <label> Username </label>
+                        <input autocomplete="off" type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="field input">
+                        <label> Password </label>
+                        <input autocomplete="off" type="password" id="password_field_login" name="password"
+                            placeholder="Password" required>
+                        <i id="occhio-login" class="fas fa-eye-slash"></i>
+                    </div>
+                    <div class="field button">
+                        <input autocomplete="off" type="submit" name="submit-log" value="Accedi">
+                    </div>
+
+                </form>
+                <div class="link">Non iscritto? <a href="#" onClick="LogToSignUp('div-login','div-reg');"> Registrati
+                    </a>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
